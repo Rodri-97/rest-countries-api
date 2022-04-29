@@ -1,18 +1,19 @@
 const Countries = (props) => {
-    const { search, filteredCountries } = props;
+    const { search, displayedCountries } = props;
 
-    if (filteredCountries.length === 0 && search.length !== 0) {
+    if (displayedCountries.length === 0 && search.length !== 0) {
         return <p>No match, specify another filter</p>
     }
 
     return (
-        <div>
-            {filteredCountries.map((country) => {
+        <div className="countries">
+            {displayedCountries.map((country) => {
                 return (
                     <div key={country.name}>
                         {country.name}
                     </div>
-            )})}
+                )
+            })}
         </div>
     )
 }

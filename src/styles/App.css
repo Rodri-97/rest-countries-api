@@ -6,10 +6,15 @@
 }
 
 body .header {
-  border-bottom: 3px solid red;
+  border: 3px solid red;
 }
 
 body .main {
   padding: 20px;
+  border: 3px solid blue;
+}
+
+body .main .countries {
+  border: 3px solid orange;
 }
 /*# sourceMappingURL=App.css.map */

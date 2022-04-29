@@ -6,6 +6,7 @@ import Countries from "./components/Countries.js";
 const App = () => {
   const [allCountries, setAllCountries] = useState([]);
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("All");
 
   const hook = () => {
     const eventHandler = response => {
@@ -20,12 +21,17 @@ const App = () => {
   useEffect(hook, []);
 
   const handleSearchChange = event => setSearch(event.target.value);
+  const handleFilterChange = (event) => setFilter(event.target.value);
 
-  const filteredCountries = allCountries.filter((country) => {
-      const lowerCaseCountry = country.name.toLowerCase();
-      const lowerCaseSearch = search.toLowerCase();
-      return lowerCaseCountry.includes(lowerCaseSearch);
-  })
+  const filterOptions = [
+    "All", "Africa", "Americas", "Asia", "Europe", "Oceania", "Polar"
+  ];
+
+  const displayedCountries = allCountries.filter((country) => {
+    const lowerCaseCountry = country.name.toLowerCase();
+    const lowerCaseSearch = search.toLowerCase();
+    return lowerCaseCountry.includes(lowerCaseSearch) && (country.region === filter || filter === "All");
+  });
 
   return (
     <div>
@@ -35,10 +41,16 @@ const App = () => {
       </header>
       <main className="main">
         <input className="search-bar" value={search} onChange={handleSearchChange} />
-        <Countries 
-          className="countries"
+
+        <select className="filter" value={filter} onChange={handleFilterChange} >
+          {filterOptions.map((filterOption) => {
+            return <option key={filterOption} value={filterOption}>{filterOption}</option>
+          })}
+        </select>
+
+        <Countries
           search={search}
-          filteredCountries={filteredCountries}
+          displayedCountries={displayedCountries}
           handleSearchChange={handleSearchChange}
         />
       </main>
