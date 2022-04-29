@@ -9,18 +9,17 @@ const App = () => {
   const [filter, setFilter] = useState("All");
 
   const hook = () => {
-    const eventHandler = response => {
+    const eventHandler = (response) => {
       const countriesData = response.data
       setAllCountries(countriesData)
-    }
+    };
 
-    const promise = axios.get("https://restcountries.com/v2/all")
-    promise.then(eventHandler)
-  }
-
+    const promise = axios.get("https://restcountries.com/v2/all");
+    promise.then(eventHandler);
+  };
   useEffect(hook, []);
 
-  const handleSearchChange = event => setSearch(event.target.value);
+  const handleSearchChange = (event) => setSearch(event.target.value);
   const handleFilterChange = (event) => setFilter(event.target.value);
 
   const filterOptions = [

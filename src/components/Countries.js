@@ -9,8 +9,12 @@ const Countries = (props) => {
         <div className="countries">
             {displayedCountries.map((country) => {
                 return (
-                    <div key={country.name}>
-                        {country.name}
+                    <div key={country.name} className="country">
+                        <div className="flag-container" style={{
+                            backgroundImage: `url(${country.flags.svg})`
+                        }}>
+                        </div>
+                        <h2>{country.name}</h2>
                     </div>
                 )
             })}
