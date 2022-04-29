@@ -37,7 +37,7 @@ const App = () => {
   return (
     <div>
       <header className="header">
-        <h1>Where in the world?</h1>
+        <h1 className="title">Where in the world?</h1>
         <span>Dark mode</span>
       </header>
       <main className="main">

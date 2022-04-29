@@ -12,7 +12,27 @@
 }
 
 body .header {
-  border: 3px solid red;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 20px;
+  -webkit-box-shadow: 0 0 5px lightgray;
+          box-shadow: 0 0 5px lightgray;
+}
+
+body .header .title {
+  font-size: 20px;
 }
 
 body .main {
@@ -31,12 +51,11 @@ body .main {
           align-items: flex-start;
   gap: 50px;
   padding: 30px;
-  border: 3px solid blue;
 }
 
 body .main .search-container, body .main .filter {
-  -webkit-box-shadow: 0 0 1em lightgray;
-          box-shadow: 0 0 1em lightgray;
+  -webkit-box-shadow: 0 0 5px lightgray;
+          box-shadow: 0 0 5px lightgray;
   padding: 10px 20px;
 }
 
@@ -93,15 +112,15 @@ body .main .countries .country {
       grid-template-rows: repeat(2, 200px);
   -ms-grid-columns: 350px;
       grid-template-columns: 350px;
-  -webkit-box-shadow: 0 0 1em lightgray;
-          box-shadow: 0 0 1em lightgray;
+  -webkit-box-shadow: 0 0 5px lightgray;
+          box-shadow: 0 0 5px lightgray;
 }
 
 body .main .countries .country .flag-container {
   background-size: cover;
   background-position: center center;
-  -webkit-box-shadow: 0 0 1em lightgray;
-          box-shadow: 0 0 1em lightgray;
+  -webkit-box-shadow: 0 0 5px lightgray;
+          box-shadow: 0 0 5px lightgray;
 }
 
 body .main .countries .country .country-info {

@@ -1,10 +1,10 @@
+$boxShadow: 0 0 5px lightgray;
+$searchFilterLateralPadding: 20px;
+
 @font-face {
     font-family: "Nunito Sans";
     src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
 }
-
-$boxShadow: 0 0 1em lightgray;
-$searchFilterLateralPadding: 20px;
 
 * {
     margin: 0;
@@ -15,7 +15,17 @@ $searchFilterLateralPadding: 20px;
 
 body {
     .header {
-        border: 3px solid red;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        box-shadow: $boxShadow;
+
+        .title {
+            font-size: 20px;
+        }
     }
 
     .main {
@@ -25,8 +35,6 @@ body {
         align-items: flex-start;
         gap: 50px;
         padding: 30px;
-
-        border: 3px solid blue;
 
         .search-container, .filter {
             box-shadow: $boxShadow;
