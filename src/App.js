@@ -1,7 +1,9 @@
+import "./styles/App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "./styles/App.css";
 import Countries from "./components/Countries.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [allCountries, setAllCountries] = useState([]);
@@ -39,7 +41,15 @@ const App = () => {
         <span>Dark mode</span>
       </header>
       <main className="main">
-        <input className="search-bar" value={search} onChange={handleSearchChange} />
+        <div className="search-container">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input 
+            className="search-bar" 
+            value={search} 
+            onChange={handleSearchChange}
+            placeholder="Search for a country..." 
+          />
+        </div>
 
         <select className="filter" value={filter} onChange={handleFilterChange} >
           {filterOptions.map((filterOption) => {

@@ -10,7 +10,6 @@ body .header {
 }
 
 body .main {
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,8 +23,51 @@ body .main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 30px;
+  gap: 50px;
+  padding: 30px;
   border: 3px solid blue;
+}
+
+body .main .search-container, body .main .filter {
+  -webkit-box-shadow: 0 0 1em lightgray;
+          box-shadow: 0 0 1em lightgray;
+  padding: 10px 20px;
+}
+
+body .main .search-container .search-icon {
+  margin-right: 10px;
+}
+
+body .main .search-container .search-bar {
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+body .main .search-container .search-bar::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+
+body .main .search-container .search-bar:-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+body .main .search-container .search-bar::-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+body .main .search-container .search-bar::placeholder {
+  color: #c8c8c8;
+}
+
+body .main .filter {
+  border: none;
+  border-right: 20px solid transparent;
+  outline: none;
+}
+
+body .main .filter {
+  background: white;
 }
 
 body .main .countries {
@@ -55,8 +97,8 @@ body .main .countries .country {
 body .main .countries .country .flag-container {
   background-size: cover;
   background-position: center center;
-  -webkit-box-shadow: 0 0 .5em lightgray;
-          box-shadow: 0 0 .5em lightgray;
+  -webkit-box-shadow: 0 0 1em lightgray;
+          box-shadow: 0 0 1em lightgray;
 }
 
 body .main .countries .country .country-info {
