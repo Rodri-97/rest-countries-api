@@ -14,7 +14,12 @@ const Countries = (props) => {
                             backgroundImage: `url(${country.flags.svg})`
                         }}>
                         </div>
-                        <h2>{country.name}</h2>
+                        <div className="country-info">
+                            <h2 className="country-name">{country.name}</h2>
+                            <p><span className="info-span">Population:</span> {country.population}</p>
+                            <p><span className="info-span">Region:</span> {country.region}</p>
+                            <p><span className="info-span">Capital:</span> {country.capital}</p>
+                        </div>
                     </div>
                 )
             })}
