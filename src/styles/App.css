@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .header {
+  border-bottom: 3px solid red;
+}
+
+body .main {
+  padding: 20px;
+}
+/*# sourceMappingURL=App.css.map */
