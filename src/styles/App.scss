@@ -11,6 +11,11 @@ body {
 
     .main {
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
 
         border: 3px solid blue;
 
@@ -18,17 +23,19 @@ body {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding: 20px 50px;
+            padding: 0 50px;
+            margin: 0 auto;
 
             .country {
-                border: 3px solid orange;
                 display: grid;
                 grid-template-rows: repeat(2, 200px);
+                grid-template-columns: 350px;
+                box-shadow: 0 0 1em lightgray;
 
                 .flag-container {
-                    border: 3px solid red;
                     background-size: cover;
                     background-position: center center;
+                    box-shadow: 0 0 .5em lightgray;
                 }
 
                 .country-info {

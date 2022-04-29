@@ -11,6 +11,20 @@ body .header {
 
 body .main {
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 30px;
   border: 3px solid blue;
 }
 
@@ -23,21 +37,26 @@ body .main .countries {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  padding: 20px 50px;
+  padding: 0 50px;
+  margin: 0 auto;
 }
 
 body .main .countries .country {
-  border: 3px solid orange;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (200px)[2];
       grid-template-rows: repeat(2, 200px);
+  -ms-grid-columns: 350px;
+      grid-template-columns: 350px;
+  -webkit-box-shadow: 0 0 1em lightgray;
+          box-shadow: 0 0 1em lightgray;
 }
 
 body .main .countries .country .flag-container {
-  border: 3px solid red;
   background-size: cover;
   background-position: center center;
+  -webkit-box-shadow: 0 0 .5em lightgray;
+          box-shadow: 0 0 .5em lightgray;
 }
 
 body .main .countries .country .country-info {
