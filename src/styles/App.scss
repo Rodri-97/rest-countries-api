@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+}
+
 $boxShadow: 0 0 1em lightgray;
 $searchFilterLateralPadding: 20px;
 
@@ -5,6 +10,7 @@ $searchFilterLateralPadding: 20px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito Sans";
 }
 
 body {
@@ -44,13 +50,10 @@ body {
         }
 
         .filter {
+            background: white;
             border: none;
             border-right: $searchFilterLateralPadding solid transparent;
             outline: none;
-        }
-
-        .filter {
-            background: white;
         }
 
         .countries {
