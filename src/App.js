@@ -37,7 +37,12 @@ const App = () => {
                   `/${country.name.toLowerCase()}` :
                   `/${country.name.toLowerCase().split(" ").join("-")}`
                 }
-                element={<Country country={country} />}
+                element={
+                <Country 
+                  country={country} 
+                  allCountries={allCountries}
+                />
+                }
               />
           })}
         </Routes>

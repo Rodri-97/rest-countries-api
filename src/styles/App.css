@@ -158,4 +158,8 @@ body .home .countries .country-link .country .country-info .country-name {
 body .home .countries .country-link .country .country-info .info-span {
   font-weight: bold;
 }
+
+.border-country {
+  margin: 0 5px;
+}
 /*# sourceMappingURL=App.css.map */
