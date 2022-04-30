@@ -35,7 +35,7 @@ body .header .title {
   font-size: 20px;
 }
 
-body .main {
+body .home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,46 +53,46 @@ body .main {
   padding: 30px;
 }
 
-body .main .search-container, body .main .filter {
+body .home .search-container, body .home .filter {
   -webkit-box-shadow: 0 0 5px lightgray;
           box-shadow: 0 0 5px lightgray;
   padding: 10px 20px;
 }
 
-body .main .search-container .search-icon {
+body .home .search-container .search-icon {
   margin-right: 10px;
 }
 
-body .main .search-container .search-bar {
+body .home .search-container .search-bar {
   border: none;
   outline: none;
   padding: 5px;
 }
 
-body .main .search-container .search-bar::-webkit-input-placeholder {
+body .home .search-container .search-bar::-webkit-input-placeholder {
   color: #c8c8c8;
 }
 
-body .main .search-container .search-bar:-ms-input-placeholder {
+body .home .search-container .search-bar:-ms-input-placeholder {
   color: #c8c8c8;
 }
 
-body .main .search-container .search-bar::-ms-input-placeholder {
+body .home .search-container .search-bar::-ms-input-placeholder {
   color: #c8c8c8;
 }
 
-body .main .search-container .search-bar::placeholder {
+body .home .search-container .search-bar::placeholder {
   color: #c8c8c8;
 }
 
-body .main .filter {
+body .home .filter {
   background: white;
   border: none;
   border-right: 20px solid transparent;
   outline: none;
 }
 
-body .main .countries {
+body .home .countries {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +105,12 @@ body .main .countries {
   margin: 0 auto;
 }
 
-body .main .countries .country {
+body .home .countries .country-link {
+  text-decoration: none;
+  color: black;
+}
+
+body .home .countries .country-link .country {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (200px)[2];
@@ -116,14 +121,19 @@ body .main .countries .country {
           box-shadow: 0 0 5px lightgray;
 }
 
-body .main .countries .country .flag-container {
+body .home .countries .country-link .country:hover {
+  -webkit-box-shadow: 0 0 30px black;
+          box-shadow: 0 0 30px black;
+}
+
+body .home .countries .country-link .country .flag-container {
   background-size: cover;
   background-position: center center;
   -webkit-box-shadow: 0 0 5px lightgray;
           box-shadow: 0 0 5px lightgray;
 }
 
-body .main .countries .country .country-info {
+body .home .countries .country-link .country .country-info {
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,11 +151,11 @@ body .main .countries .country .country-info {
   gap: 10px;
 }
 
-body .main .countries .country .country-info .country-name {
+body .home .countries .country-link .country .country-info .country-name {
   margin-bottom: 20px;
 }
 
-body .main .countries .country .country-info .info-span {
+body .home .countries .country-link .country .country-info .info-span {
   font-weight: bold;
 }
 /*# sourceMappingURL=App.css.map */

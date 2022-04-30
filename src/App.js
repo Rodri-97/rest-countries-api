@@ -1,14 +1,12 @@
 import "./styles/App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Countries from "./components/Countries.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home.js";
+import Country from "./components/Country.js";
 
 const App = () => {
   const [allCountries, setAllCountries] = useState([]);
-  const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("All");
 
   const hook = () => {
     const eventHandler = (response) => {
@@ -21,48 +19,25 @@ const App = () => {
   };
   useEffect(hook, []);
 
-  const handleSearchChange = (event) => setSearch(event.target.value);
-  const handleFilterChange = (event) => setFilter(event.target.value);
-
-  const filterOptions = [
-    "All", "Africa", "Americas", "Asia", "Europe", "Oceania", "Polar"
-  ];
-
-  const displayedCountries = allCountries.filter((country) => {
-    const lowerCaseCountry = country.name.toLowerCase();
-    const lowerCaseSearch = search.toLowerCase();
-    return lowerCaseCountry.includes(lowerCaseSearch) && (country.region === filter || filter === "All");
-  });
-
   return (
     <div>
       <header className="header">
         <h1 className="title">Where in the world?</h1>
         <span>Dark mode</span>
       </header>
-      <main className="main">
-        <div className="search-container">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          <input 
-            className="search-bar" 
-            value={search} 
-            onChange={handleSearchChange}
-            placeholder="Search for a country..." 
-          />
-        </div>
 
-        <select className="filter" value={filter} onChange={handleFilterChange} >
-          {filterOptions.map((filterOption) => {
-            return <option key={filterOption} value={filterOption}>{filterOption}</option>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home allCountries={allCountries} />} />
+          {allCountries.map((country) => {
+              return <Route
+                key={country.name} 
+                path={`/${country.name.toLowerCase()}`}
+                element={<Country country={country} />}
+              />
           })}
-        </select>
-
-        <Countries
-          search={search}
-          displayedCountries={displayedCountries}
-          handleSearchChange={handleSearchChange}
-        />
-      </main>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

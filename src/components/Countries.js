@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Countries = (props) => {
     const { search, displayedCountries } = props;
 
@@ -9,6 +11,8 @@ const Countries = (props) => {
         <div className="countries">
             {displayedCountries.map((country) => {
                 return (
+                    <Link to={`/${country.name.toLowerCase()}`}
+                    key={country.name} className="country-link" >
                     <div key={country.name} className="country">
                         <div className="flag-container" style={{
                             backgroundImage: `url(${country.flags.svg})`
@@ -21,6 +25,7 @@ const Countries = (props) => {
                             <p><span className="info-span">Capital:</span> {country.capital}</p>
                         </div>
                     </div>
+                </Link>
                 )
             })}
         </div>
