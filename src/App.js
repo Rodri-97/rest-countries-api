@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.js";
 import Country from "./components/Country.js";
+import latinize from "latinize";
 
 const App = () => {
   const [allCountries, setAllCountries] = useState([]);
@@ -34,8 +35,8 @@ const App = () => {
                 key={country.name} 
                 path={
                   country.name.split(" ").length === 1 ?
-                  `/${country.name.toLowerCase()}` :
-                  `/${country.name.toLowerCase().split(" ").join("-")}`
+                  `/${latinize(country.name.toLowerCase())}` :
+                  `/${latinize(country.name.toLowerCase().split(" ").join("-"))}`
                 }
                 element={
                 <Country 

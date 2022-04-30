@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import latinize from "latinize";
 
 const Countries = (props) => {
     const { search, displayedCountries } = props;
@@ -13,8 +14,8 @@ const Countries = (props) => {
                 return (
                     <Link to={
                         country.name.split(" ").length === 1 ?
-                        `/${country.name.toLowerCase()}` :
-                        `/${country.name.toLowerCase().split(" ").join("-")}`
+                        `/${latinize(country.name.toLowerCase())}` :
+                        `/${latinize(country.name.toLowerCase().split(" ").join("-"))}`
                     }
                     key={country.name} className="country-link" >
                     <div key={country.name} className="country">
