@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
+import Borders from "./Borders.js";
 
 const Country = (props) => {
     const { country, allCountries } = props;
 
     const { 
         population, region, subregion, capital,
-        topLevelDomain, currencies, languages,
-        borders
+        topLevelDomain, currencies, languages
     } = country;
 
     const displayedCurrencies = currencies.map((currency) => {
@@ -16,31 +16,6 @@ const Country = (props) => {
     const displayedLanguages = languages.map((language) => {
         return language.name;
     });
-
-    const getBorderCountries = () => {
-        let borderCountries = [];
-
-        borders.forEach((borderCountry) => {
-            allCountries.forEach((country) => {
-                if (country.alpha3Code === borderCountry) {
-                    borderCountries.push(country.name);
-                }
-            })
-        })
-
-        return borderCountries;
-    }
-
-    const borderCountries = getBorderCountries();
-
-    const displayedBorderCountries = borders.map((borderCountry, index) => {
-        return <Link to={`/${borderCountries[index].toLowerCase().split(" ").join("-")}`} 
-                    className="border-country-link"
-                    key={borderCountry}
-                >
-            {borderCountries[index]}
-        </Link>;
-    })
 
     return (
         <div>
@@ -69,9 +44,10 @@ const Country = (props) => {
                     </p>
                 </div>
 
-                <div className="border-countries">
-                    Border Countries: {displayedBorderCountries}
-                </div>
+                {"borders" in country ? 
+                <Borders country={country} allCountries={allCountries} /> 
+                : null
+                }
             </div>
         </div>
     )
