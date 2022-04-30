@@ -32,7 +32,11 @@ const App = () => {
           {allCountries.map((country) => {
               return <Route
                 key={country.name} 
-                path={`/${country.name.toLowerCase()}`}
+                path={
+                  country.name.split(" ").length === 1 ?
+                  `/${country.name.toLowerCase()}` :
+                  `/${country.name.toLowerCase().split(" ").join("-")}`
+                }
                 element={<Country country={country} />}
               />
           })}

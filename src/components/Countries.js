@@ -11,7 +11,11 @@ const Countries = (props) => {
         <div className="countries">
             {displayedCountries.map((country) => {
                 return (
-                    <Link to={`/${country.name.toLowerCase()}`}
+                    <Link to={
+                        country.name.split(" ").length === 1 ?
+                        `/${country.name.toLowerCase()}` :
+                        `/${country.name.toLowerCase().split(" ").join("-")}`
+                    }
                     key={country.name} className="country-link" >
                     <div key={country.name} className="country">
                         <div className="flag-container" style={{
