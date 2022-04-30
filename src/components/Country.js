@@ -5,13 +5,17 @@ const Country = (props) => {
     const { country, allCountries } = props;
 
     const { 
-        population, region, subregion, capital,
-        topLevelDomain, currencies, languages
+        population, region, subregion,
+        topLevelDomain, languages
     } = country;
 
-    const displayedCurrencies = currencies.map((currency) => {
-        return currency.name;
-    });
+    let displayedCurrencies;
+
+    if ("currencies" in country) {
+        displayedCurrencies = country.currencies.map((currency) => {
+            return currency.name;
+        });
+    }
 
     const displayedLanguages = languages.map((language) => {
         return language.name;
@@ -31,14 +35,21 @@ const Country = (props) => {
                     <p><span className="info-span">Population:</span> {population}</p>
                     <p><span className="info-span">Region:</span> {region}</p>
                     <p><span className="info-span">Sub Region:</span> {subregion}</p>
-                    <p><span className="info-span">Capital:</span> {capital}</p>
+                    {"capital" in country ? 
+                    <p><span className="info-span">Capital:</span> {country.capital}</p>
+                    : null
+                    }
+                    
                 </div>
 
                 <div className="info-2">
                     <p><span className="info-span">Top Level Domain:</span> {topLevelDomain}</p>
-                    <p><span className="info-span">{currencies.length > 1 ? "Currencies" : "Currency"}: </span> 
-                        {displayedCurrencies.join(", ")}
-                    </p>
+                    {"currencies" in country ?
+                        <p><span className="info-span">{country.currencies.length > 1 ? "Currencies" : "Currency"}: </span> 
+                            {displayedCurrencies.join(", ")}
+                        </p>
+                    : null
+                    }
                     <p><span className="info-span">{languages.length > 1 ? "Languages" : "Language"}: </span> 
                         {displayedLanguages.join(", ")}
                     </p>
