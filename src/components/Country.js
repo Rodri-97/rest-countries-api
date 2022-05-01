@@ -29,46 +29,48 @@ const Country = (props) => {
                 <FontAwesomeIcon icon={faArrowLeft} className="arrow-left" />
                 <span>Back</span>
             </Link>
-            
-            <div className="flag-container">
-                <img 
-                    src={country.flags.svg} 
-                    alt={`${country.name}'s flag`}
-                    className="selected-country-flag" 
-                />
-            </div>
 
-            <div className="info">
-
-                <div className="info-1">
-                    <p><span className="info-span">Native name:</span> {country.name}</p>
-                    <p><span className="info-span">Population:</span> {population}</p>
-                    <p><span className="info-span">Region:</span> {region}</p>
-                    <p><span className="info-span">Sub Region:</span> {subregion}</p>
-                    {"capital" in country ? 
-                    <p><span className="info-span">Capital:</span> {country.capital}</p>
-                    : null
-                    }
-                    
+            <div className="main-content">
+                <div className="flag-container">
+                    <img 
+                        src={country.flags.svg} 
+                        alt={`${country.name}'s flag`}
+                        className="selected-country-flag" 
+                    />
                 </div>
 
-                <div className="info-2">
-                    <p><span className="info-span">Top Level Domain:</span> {topLevelDomain}</p>
-                    {"currencies" in country ?
-                        <p><span className="info-span">{country.currencies.length > 1 ? "Currencies" : "Currency"}: </span> 
-                            {displayedCurrencies.join(", ")}
+                <div className="info">
+
+                    <div className="info-1">
+                        <p><span className="info-span">Native name:</span> {country.name}</p>
+                        <p><span className="info-span">Population:</span> {population}</p>
+                        <p><span className="info-span">Region:</span> {region}</p>
+                        <p><span className="info-span">Sub Region:</span> {subregion}</p>
+                        {"capital" in country ? 
+                        <p><span className="info-span">Capital:</span> {country.capital}</p>
+                        : null
+                        }
+                        
+                    </div>
+
+                    <div className="info-2">
+                        <p><span className="info-span">Top Level Domain:</span> {topLevelDomain}</p>
+                        {"currencies" in country ?
+                            <p><span className="info-span">{country.currencies.length > 1 ? "Currencies" : "Currency"}: </span> 
+                                {displayedCurrencies.join(", ")}
+                            </p>
+                        : null
+                        }
+                        <p><span className="info-span">{languages.length > 1 ? "Languages" : "Language"}: </span> 
+                            {displayedLanguages.join(", ")}
                         </p>
+                    </div>
+
+                    {"borders" in country ? 
+                    <Borders country={country} allCountries={allCountries} /> 
                     : null
                     }
-                    <p><span className="info-span">{languages.length > 1 ? "Languages" : "Language"}: </span> 
-                        {displayedLanguages.join(", ")}
-                    </p>
                 </div>
-
-                {"borders" in country ? 
-                <Borders country={country} allCountries={allCountries} /> 
-                : null
-                }
             </div>
         </div>
     )

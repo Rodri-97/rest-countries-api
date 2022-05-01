@@ -1,6 +1,7 @@
 $boxShadow: 0 0 5px lightgray;
 $hoverBoxShadow: 0 0 30px black;
 $searchFilterLateralPadding: 20px;
+$minDesktopWidth: 800px;
 
 @font-face {
     font-family: "Nunito Sans";
@@ -149,36 +150,84 @@ body {
             }
         }
 
-        .flag-container {
-            .selected-country-flag {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .info {
+        .main-content {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 50px;
 
-            .info-1, .info-2 {
+            .flag-container {
+                .selected-country-flag {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            .info {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
-
-                .info-span {
+                gap: 40px;
+    
+                .info-1, .info-2 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+    
+                    .info-span {
+                        font-weight: bold;
+                    }
+                }
+            }
+    
+            .border-countries {
+                .border-countries-span {
                     font-weight: bold;
+                }
+    
+                .border-country-link {
+                    margin-top: 10px;
+                    display: block;
                 }
             }
         }
+    }
+}
 
-        .border-countries {
-            .border-countries-span {
-                font-weight: bold;
-            }
+@media all and (min-width: $minDesktopWidth) {
+    body {
+        .selected-country {
 
-            .border-country-link {
-                margin-top: 10px;
+            .main-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: "flag info";
+                gap: 100px;
+
+                .flag-container {
+                    grid-area: flag;
+                    height: 300px;
+                }
+
+                .info {
+                    grid-area: info;
+                    height: 1fr;
+                    display: grid;
+                    grid-template-areas:
+                    "info-1 info-2"
+                    "borders borders"
+                    ;
+
+                    .info-1 {
+                        grid-area: info-1;
+                    }
+
+                    .info-2 {
+                        grid-area: info-2;
+                    }
+
+                    .border-countries {
+                        grid-area: borders;
+                    }
+                }
             }
         }
     }
