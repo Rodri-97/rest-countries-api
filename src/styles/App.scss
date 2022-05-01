@@ -28,7 +28,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 20px;
+        padding: 30px 85px;
         box-shadow: $boxShadow;
 
         .title {
@@ -42,7 +42,7 @@ body {
         justify-content: flex-start;
         align-items: flex-start;
         gap: 50px;
-        padding: 30px;
+        padding: 50px 85px;
 
         .search-and-filter-container {
             display: flex;
@@ -85,7 +85,6 @@ body {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding: 0 50px;
             margin: 0 auto;
 
             .country-link {
@@ -208,7 +207,7 @@ body {
                 justify-content: space-between;
             }
         }
-        
+
         .selected-country {
 
             .main-content {
