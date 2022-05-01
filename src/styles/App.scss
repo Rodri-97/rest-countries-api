@@ -27,6 +27,8 @@ $darkBlue: hsl(209, 23%, 22%);
 }
 
 body {
+    min-height: 100vh;
+
     .header {
         font-weight: bold;
         display: flex;
@@ -146,6 +148,7 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         gap: 60px;
+        min-height: 100vh;
 
         .back-link, .border-country-link {
             text-decoration: none;

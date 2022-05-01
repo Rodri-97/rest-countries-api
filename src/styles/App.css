@@ -11,6 +11,10 @@
   font-family: "Nunito Sans";
 }
 
+body {
+  min-height: 100vh;
+}
+
 body .header {
   font-weight: bold;
   display: -webkit-box;
@@ -196,6 +200,7 @@ body .selected-country {
       -ms-flex-pack: start;
           justify-content: flex-start;
   gap: 60px;
+  min-height: 100vh;
 }
 
 body .selected-country .back-link, body .selected-country .border-country-link {
