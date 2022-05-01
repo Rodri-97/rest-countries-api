@@ -24,7 +24,7 @@ const Borders = (props) => {
 
     return (
         <div className="border-countries">
-            Border Countries: {displayedBorderCountries}
+            <span className="border-countries-span">Border Countries:</span> {displayedBorderCountries}
         </div>
     )
 }

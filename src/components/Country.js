@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Borders from "./Borders.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Country = (props) => {
     const { country, allCountries } = props;
@@ -22,10 +24,18 @@ const Country = (props) => {
     });
 
     return (
-        <div>
-            <Link to="/">back</Link>
+        <div className="selected-country">
+            <Link to="/" className="back-link">
+                <FontAwesomeIcon icon={faArrowLeft} className="arrow-left" />
+                <span>Back</span>
+            </Link>
+            
             <div className="flag-container">
-                <img src={country.flags.svg} alt={`${country.name}'s flag`} />
+                <img 
+                    src={country.flags.svg} 
+                    alt={`${country.name}'s flag`}
+                    className="selected-country-flag" 
+                />
             </div>
 
             <div className="info">

@@ -7,6 +7,13 @@ $searchFilterLateralPadding: 20px;
     src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
 }
 
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -109,6 +116,69 @@ body {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .selected-country {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 60px;
+
+        .back-link, .border-country-link {
+            text-decoration: none;
+            color: black;
+            box-shadow: $boxShadow;
+            padding: 5px;
+            width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                box-shadow: $hoverBoxShadow;
+            }
+        }
+
+        .back-link {
+            .arrow-left {
+                margin-right: 10px;
+            }
+        }
+
+        .flag-container {
+            .selected-country-flag {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .info-1, .info-2 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .info-span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .border-countries {
+            .border-countries-span {
+                font-weight: bold;
+            }
+
+            .border-country-link {
+                margin-top: 10px;
             }
         }
     }

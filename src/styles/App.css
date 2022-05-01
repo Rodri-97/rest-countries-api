@@ -159,7 +159,88 @@ body .home .countries .country-link .country .country-info .info-span {
   font-weight: bold;
 }
 
-.border-country {
-  margin: 0 5px;
+body .selected-country {
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 60px;
+}
+
+body .selected-country .back-link, body .selected-country .border-country-link {
+  text-decoration: none;
+  color: black;
+  -webkit-box-shadow: 0 0 5px lightgray;
+          box-shadow: 0 0 5px lightgray;
+  padding: 5px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .selected-country .back-link:hover, body .selected-country .border-country-link:hover {
+  -webkit-box-shadow: 0 0 30px black;
+          box-shadow: 0 0 30px black;
+}
+
+body .selected-country .back-link .arrow-left {
+  margin-right: 10px;
+}
+
+body .selected-country .flag-container .selected-country-flag {
+  width: 100%;
+  height: 100%;
+}
+
+body .selected-country .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+body .selected-country .info .info-1, body .selected-country .info .info-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+body .selected-country .info .info-1 .info-span, body .selected-country .info .info-2 .info-span {
+  font-weight: bold;
+}
+
+body .selected-country .border-countries .border-countries-span {
+  font-weight: bold;
+}
+
+body .selected-country .border-countries .border-country-link {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=App.css.map */
