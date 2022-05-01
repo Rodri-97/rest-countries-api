@@ -6,7 +6,7 @@ import Home from "./components/Home.js";
 import Country from "./components/Country.js";
 import latinize from "latinize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [allCountries, setAllCountries] = useState([]);
@@ -28,9 +28,9 @@ const App = () => {
     <div className={`app ${currentMode === "light" ? "light" : "dark"}`}>
       <header className="header">
         <h1 className="title">Where in the world?</h1>
-        <div className="dark-mode-div" onClick={() => setCurrentMode(currentMode === "dark" ? "light" : "dark")}>
-          <FontAwesomeIcon icon={faMoon} className="dark-icon" />
-          Dark mode
+        <div className="mode-div" onClick={() => setCurrentMode(currentMode === "dark" ? "light" : "dark")}>
+          <FontAwesomeIcon icon={currentMode === "light" ? faMoon : faSun} className="mode-icon" />
+          {currentMode === "light" ? "Dark mode" : "Light mode"}
         </div>
       </header>
 

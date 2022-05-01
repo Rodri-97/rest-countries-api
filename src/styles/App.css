@@ -35,12 +35,12 @@ body .header .title {
   font-size: 20px;
 }
 
-body .header .dark-mode-div {
+body .header .mode-div {
   cursor: pointer;
 }
 
-body .header .dark-mode-div .dark-icon {
-  margin-left: 10px;
+body .header .mode-div .mode-icon {
+  margin-right: 10px;
 }
 
 body .home {
