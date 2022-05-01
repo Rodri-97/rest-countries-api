@@ -3,6 +3,9 @@ $hoverBoxShadow: 0 0 30px black;
 $searchFilterLateralPadding: 20px;
 $mobileLateralPadding: 20px;
 $desktopLateralPadding: 85px;
+$veryLightGray: hsl(0, 0%, 98%);
+$veryDarkBlue: hsl(207, 26%, 17%);
+$darkBlue: hsl(209, 23%, 22%);
 
 @font-face {
     font-family: "Nunito Sans";
@@ -35,6 +38,14 @@ body {
 
         .title {
             font-size: 20px;
+        }
+
+        .dark-mode-div {
+            cursor: pointer;
+
+            .dark-icon {
+                margin-left: 10px;
+            }
         }
     }
 
@@ -91,7 +102,6 @@ body {
 
             .country-link {
                 text-decoration: none;
-                color: black;
 
                 .country {
                     display: grid;
@@ -139,7 +149,6 @@ body {
 
         .back-link, .border-country-link {
             text-decoration: none;
-            color: black;
             box-shadow: $boxShadow;
             padding: 5px;
             width: 100px;
@@ -195,6 +204,101 @@ body {
                 .border-country-link {
                     margin-top: 10px;
                     display: block;
+                }
+            }
+        }
+    }
+}
+
+body {
+    .app.light {
+        .header {
+            background-color: white;
+        }
+
+        .home, .selected-country {
+            background-color: $veryLightGray;
+            color: black;
+        }
+
+        .home {
+            .search-and-filter-container {
+                .search-container, .filter {
+                    background-color: white;
+                }
+
+                .search-container {
+                    .search-bar {
+                        background-color: white;
+                    }
+                }
+            }
+
+            .countries {
+                .country-link {
+                    color: black;
+                }
+            }
+        }
+
+        .selected-country {
+            .back-link {
+                color: black;
+            }
+
+            .main-content {
+                .border-countries {
+                    .border-country-link {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .app.dark {
+        .header {
+            background-color: $darkBlue;
+            color: white;
+        }
+
+        .home, .selected-country {
+            background-color: $veryDarkBlue;
+            color: white;
+        }
+
+        .home {
+            .search-and-filter-container {
+                .search-container, .filter {
+                    background-color: $darkBlue;
+                    color: white;
+                }
+
+                .search-container {
+                    .search-bar {
+                        background-color: $darkBlue;
+                        color: white;
+                    }
+                }
+            }
+
+            .countries {
+                .country-link {
+                    color: white;
+                }
+            }
+        }
+
+        .selected-country {
+            .back-link {
+                color: white;
+            }
+
+            .main-content {
+                .border-countries {
+                    .border-country-link {
+                        color: white;
+                    }
                 }
             }
         }

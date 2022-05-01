@@ -35,6 +35,14 @@ body .header .title {
   font-size: 20px;
 }
 
+body .header .dark-mode-div {
+  cursor: pointer;
+}
+
+body .header .dark-mode-div .dark-icon {
+  margin-left: 10px;
+}
+
 body .home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -124,7 +132,6 @@ body .home .countries {
 
 body .home .countries .country-link {
   text-decoration: none;
-  color: black;
 }
 
 body .home .countries .country-link .country {
@@ -193,7 +200,6 @@ body .selected-country {
 
 body .selected-country .back-link, body .selected-country .border-country-link {
   text-decoration: none;
-  color: black;
   -webkit-box-shadow: 0 0 5px lightgray;
           box-shadow: 0 0 5px lightgray;
   padding: 5px;
@@ -271,6 +277,67 @@ body .selected-country .main-content .border-countries .border-countries-span {
 body .selected-country .main-content .border-countries .border-country-link {
   margin-top: 10px;
   display: block;
+}
+
+body .app.light .header {
+  background-color: white;
+}
+
+body .app.light .home, body .app.light .selected-country {
+  background-color: #fafafa;
+  color: black;
+}
+
+body .app.light .home .search-and-filter-container .search-container, body .app.light .home .search-and-filter-container .filter {
+  background-color: white;
+}
+
+body .app.light .home .search-and-filter-container .search-container .search-bar {
+  background-color: white;
+}
+
+body .app.light .home .countries .country-link {
+  color: black;
+}
+
+body .app.light .selected-country .back-link {
+  color: black;
+}
+
+body .app.light .selected-country .main-content .border-countries .border-country-link {
+  color: black;
+}
+
+body .app.dark .header {
+  background-color: #2b3945;
+  color: white;
+}
+
+body .app.dark .home, body .app.dark .selected-country {
+  background-color: #202c37;
+  color: white;
+}
+
+body .app.dark .home .search-and-filter-container .search-container, body .app.dark .home .search-and-filter-container .filter {
+  background-color: #2b3945;
+  color: white;
+}
+
+body .app.dark .home .search-and-filter-container .search-container .search-bar {
+  background-color: #2b3945;
+  color: white;
+}
+
+body .app.dark .home .countries .country-link {
+  color: white;
+}
+
+body .app.dark .selected-country .back-link {
+  color: white;
+}
+
+body .app.dark .selected-country .main-content .border-countries .border-country-link {
+  color: white;
 }
 
 @media all and (min-width: 800px) {
