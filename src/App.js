@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.js";
 import Country from "./components/Country.js";
 import latinize from "latinize";
@@ -34,7 +34,7 @@ const App = () => {
         </div>
       </header>
 
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home allCountries={allCountries} />} />
           {allCountries.map((country) => {
@@ -54,7 +54,7 @@ const App = () => {
               />
           })}
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
