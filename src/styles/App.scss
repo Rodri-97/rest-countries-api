@@ -1,7 +1,6 @@
 $boxShadow: 0 0 5px lightgray;
 $hoverBoxShadow: 0 0 30px black;
 $searchFilterLateralPadding: 20px;
-$minDesktopWidth: 800px;
 
 @font-face {
     font-family: "Nunito Sans";
@@ -192,7 +191,7 @@ body {
     }
 }
 
-@media all and (min-width: $minDesktopWidth) {
+@media all and (min-width: 800px) {
     body {
         .selected-country {
 
@@ -228,6 +227,28 @@ body {
                         grid-area: borders;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1000px) {
+    body {
+        .home {
+            .countries {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1250px) {
+    body {
+        .home {
+            .countries {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }

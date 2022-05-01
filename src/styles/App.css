@@ -297,4 +297,21 @@ body .selected-country .main-content .border-countries .border-country-link {
     grid-area: borders;
   }
 }
+
+@media all and (min-width: 1000px) {
+  body .home .countries {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media all and (min-width: 1250px) {
+  body .home .countries {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
 /*# sourceMappingURL=App.css.map */
