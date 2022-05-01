@@ -26,7 +26,7 @@ body .header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 85px;
+  padding: 30px 20px;
   -webkit-box-shadow: 0 0 5px lightgray;
           box-shadow: 0 0 5px lightgray;
 }
@@ -50,7 +50,7 @@ body .home {
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 50px;
-  padding: 50px 85px;
+  padding: 50px 20px;
 }
 
 body .home .search-and-filter-container {
@@ -274,6 +274,10 @@ body .selected-country .main-content .border-countries .border-country-link {
 }
 
 @media all and (min-width: 800px) {
+  body .header, body .home {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
   body .home .search-and-filter-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

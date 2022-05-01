@@ -1,6 +1,8 @@
 $boxShadow: 0 0 5px lightgray;
 $hoverBoxShadow: 0 0 30px black;
 $searchFilterLateralPadding: 20px;
+$mobileLateralPadding: 20px;
+$desktopLateralPadding: 85px;
 
 @font-face {
     font-family: "Nunito Sans";
@@ -28,7 +30,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 85px;
+        padding: 30px $mobileLateralPadding;
         box-shadow: $boxShadow;
 
         .title {
@@ -42,7 +44,7 @@ body {
         justify-content: flex-start;
         align-items: flex-start;
         gap: 50px;
-        padding: 50px 85px;
+        padding: 50px $mobileLateralPadding;
 
         .search-and-filter-container {
             display: flex;
@@ -201,6 +203,11 @@ body {
 
 @media all and (min-width: 800px) {
     body {
+        .header, .home {
+            padding-left: $desktopLateralPadding;
+            padding-right: $desktopLateralPadding;
+        }
+
         .home {
             .search-and-filter-container {
                 flex-direction: row;
