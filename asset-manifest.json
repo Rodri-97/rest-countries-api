@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/rest-countries-api/static/css/main.ab24eb27.css",
+    "main.js": "/rest-countries-api/static/js/main.8b204f7e.js",
+    "static/media/NunitoSans-Regular.ttf": "/rest-countries-api/static/media/NunitoSans-Regular.25d5a42e25da2f3ed7f4.ttf",
+    "index.html": "/rest-countries-api/index.html",
+    "main.ab24eb27.css.map": "/rest-countries-api/static/css/main.ab24eb27.css.map",
+    "main.8b204f7e.js.map": "/rest-countries-api/static/js/main.8b204f7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab24eb27.css",
+    "static/js/main.8b204f7e.js"
+  ]
+}
