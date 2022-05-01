@@ -44,32 +44,41 @@ body {
         gap: 50px;
         padding: 30px;
 
-        .search-container, .filter {
-            box-shadow: $boxShadow;
-            padding: 10px $searchFilterLateralPadding;
-        }
+        .search-and-filter-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 30px;
+            width: 100%;
 
-        .search-container {
-            .search-icon {
-                margin-right: 10px;
+            .search-container, .filter {
+                box-shadow: $boxShadow;
+                padding: 10px $searchFilterLateralPadding;
             }
-
-            .search-bar {
-                border: none;
-                outline: none;
-                padding: 5px;
-
-                &::placeholder {
-                    color: rgb(200, 200, 200);
+    
+            .search-container {
+                .search-icon {
+                    margin-right: 10px;
+                }
+    
+                .search-bar {
+                    border: none;
+                    outline: none;
+                    padding: 5px;
+    
+                    &::placeholder {
+                        color: rgb(200, 200, 200);
+                    }
                 }
             }
-        }
-
-        .filter {
-            background: white;
-            border: none;
-            border-right: $searchFilterLateralPadding solid transparent;
-            outline: none;
+    
+            .filter {
+                background: white;
+                border: none;
+                border-right: $searchFilterLateralPadding solid transparent;
+                outline: none;
+            }
         }
 
         .countries {
@@ -193,6 +202,13 @@ body {
 
 @media all and (min-width: 800px) {
     body {
+        .home {
+            .search-and-filter-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
         .selected-country {
 
             .main-content {

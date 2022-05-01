@@ -53,39 +53,57 @@ body .home {
   padding: 30px;
 }
 
-body .home .search-container, body .home .filter {
+body .home .search-and-filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+body .home .search-and-filter-container .search-container, body .home .search-and-filter-container .filter {
   -webkit-box-shadow: 0 0 5px lightgray;
           box-shadow: 0 0 5px lightgray;
   padding: 10px 20px;
 }
 
-body .home .search-container .search-icon {
+body .home .search-and-filter-container .search-container .search-icon {
   margin-right: 10px;
 }
 
-body .home .search-container .search-bar {
+body .home .search-and-filter-container .search-container .search-bar {
   border: none;
   outline: none;
   padding: 5px;
 }
 
-body .home .search-container .search-bar::-webkit-input-placeholder {
+body .home .search-and-filter-container .search-container .search-bar::-webkit-input-placeholder {
   color: #c8c8c8;
 }
 
-body .home .search-container .search-bar:-ms-input-placeholder {
+body .home .search-and-filter-container .search-container .search-bar:-ms-input-placeholder {
   color: #c8c8c8;
 }
 
-body .home .search-container .search-bar::-ms-input-placeholder {
+body .home .search-and-filter-container .search-container .search-bar::-ms-input-placeholder {
   color: #c8c8c8;
 }
 
-body .home .search-container .search-bar::placeholder {
+body .home .search-and-filter-container .search-container .search-bar::placeholder {
   color: #c8c8c8;
 }
 
-body .home .filter {
+body .home .search-and-filter-container .filter {
   background: white;
   border: none;
   border-right: 20px solid transparent;
@@ -257,6 +275,15 @@ body .selected-country .main-content .border-countries .border-country-link {
 }
 
 @media all and (min-width: 800px) {
+  body .home .search-and-filter-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   body .selected-country .main-content {
     display: -ms-grid;
     display: grid;

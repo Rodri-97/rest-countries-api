@@ -23,22 +23,24 @@ const Home = (props) => {
     });
 
     return (
-        <div className="home">
-        <div className="search-container">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          <input 
-            className="search-bar" 
-            value={search} 
-            onChange={handleSearchChange}
-            placeholder="Search for a country..." 
-          />
-        </div>
+      <div className="home">
+        <div className="search-and-filter-container">
+          <div className="search-container">
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
+            <input 
+              className="search-bar" 
+              value={search} 
+              onChange={handleSearchChange}
+              placeholder="Search for a country..." 
+            />
+          </div>
 
-        <select className="filter" value={filter} onChange={handleFilterChange} >
-          {filterOptions.map((filterOption) => {
-            return <option key={filterOption} value={filterOption}>{filterOption}</option>
-          })}
-        </select>
+          <select className="filter" value={filter} onChange={handleFilterChange} >
+            {filterOptions.map((filterOption) => {
+              return <option key={filterOption} value={filterOption}>{filterOption}</option>
+            })}
+          </select>
+        </div>
 
         <Countries
           search={search}
